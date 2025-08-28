@@ -1,0 +1,27 @@
+BOT_TOKEN=6681002925:AAHc-gK3MLACv-lkhm3lhDGmEMb6yt6YuB0
+admin=1756271105
+admin_name=cheiz # С таким именем будет добавлен в админ панель
+rules_url=https://telegra.ph/Oznakomlenie-s-rabotoj-v-Blume-10-25
+
+start_photo=b1.png
+photo_nickname=b2.png
+photo_rules=b3.png
+photo_role=b4.png
+photo_stack1=b5.png
+photo_preferences=b6.png
+photo_portfolie=b8.png
+photo_conf=banner.png
+photo_specialization=co1.png
+photo_stack2=co2.png
+photo_size=co3.png
+photo_short_description=co4.png
+photo_full_description=co5.png
+photo_deadlines=co6.png
+photo_price=co7.png
+photo_confirmation=co8.png
+photo_orders=orders.png
+photo_order=bo.png
+photo_menu=menu.png
+photo_stats=a1.png
+photo_users=a2.png
+photo_wh=a3.png
