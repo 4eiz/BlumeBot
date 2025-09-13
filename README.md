@@ -85,7 +85,7 @@ git add .
 git commit -m "chore: init BlumeBot repo"
 
 # create GitHub repo via gh CLI
-gh repo create <username>/blumebot --public --source=. --remote=origin --push
+gh repo create 4eiz/blumebot --public --source=. --remote=origin --push
 ```
 
 ## 🧹 .gitignore & Secrets
