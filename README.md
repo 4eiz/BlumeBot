@@ -1,99 +1,100 @@
-# 🪻 BlumeBot — бот студии для выполнения заказов
+# 🪻 BlumeBot — Telegram Bot for Orders
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![Aiogram](https://img.shields.io/badge/aiogram-3.x-ff69b4)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-Active-success)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![Aiogram](https://img.shields.io/badge/aiogram-3.x-ff69b4) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-Active-success)  
 
-## 📖 Описание проекта
-BlumeBot — многоюзерный Telegram‑бот студии для приёма и обработки заказов.
-Поддерживает работу с профилем пользователя, заказами, модерацией и рассылками.
-Хранение — **SQLite (aiosqlite)**, фреймворк — **aiogram 3**. Конфигурация через **.env**.
+## 📖 Project Description
+**BlumeBot** — a multi-user Telegram bot for handling and processing studio orders.  
+It supports user profiles, order creation and management, moderation, and broadcasts.  
+Storage: **SQLite (aiosqlite)**, framework: **aiogram 3**, configuration via **.env**.  
 
-> Скриншоты и GIF можно положить в `assets/` и вставить сюда.
+> 💡 This project is a test and demo version developed for a developer from Croatia.  
 
-## ✨ Основные возможности
-- 👤 Профиль пользователя и активные заказы
-- 🧾 Создание и управление заказами (формы)
-- 🛡️ Вайтлист/бан‑контроль
-- 🗞️ Рассылка сообщений администраторами
-- ❓ FAQ и стартовое меню
-- 🪪 Роли/статусы (права админа в коде/БД)
+Screenshots and GIFs can be placed in the `assets/` folder and added here.  
 
-## 🧱 Технологии
-- **Python 3.10+**
-- **aiogram 3.x**
-- **aiosqlite**
-- **python‑dotenv**
+## ✨ Main Features
+- 👤 User profile and active orders  
+- 🧾 Order creation and management (forms)  
+- 🛡️ Whitelist/ban control  
+- 🗞️ Broadcast messages (admin panel)  
+- ❓ FAQ and start menu  
+- 🪪 Roles/statuses (admin rights stored in DB/code)  
 
-## 📂 Структура проекта (сокращённо)
+## 🧱 Tech Stack
+- **Python 3.10+**  
+- **aiogram 3.x**  
+- **aiosqlite**  
+- **python-dotenv**  
+
+## 📂 Project Structure (simplified)
 ```
 BlumeBot/
-├─ app/                 # хендлеры, формы, панели админа
-├─ data/                # БД: users, orders, whitelist; init-скрипты
-├─ keyboards/           # инлайн/реплай клавиатуры
-├─ config.py            # загрузка .env и инициализация Bot
-├─ main.py              # запуск/диспетчер, регистрация роутеров
-├─ req.txt              # зависимости (aiogram, aiosqlite, python-dotenv)
+├─ app/                 # handlers, forms, admin panels
+├─ data/                # DB: users, orders, whitelist; init scripts
+├─ keyboards/           # inline/reply keyboards
+├─ config.py            # loads .env and initializes Bot
+├─ main.py              # startup/dispatcher, router registration
+├─ req.txt              # dependencies (aiogram, aiosqlite, python-dotenv)
 └─ data/create_tables.sql
 ```
 
-## ⚙️ Переменные окружения
-Создайте `.env` на основе примера и заполните значения:
+## ⚙️ Environment Variables
+Create a `.env` file based on the example and fill in the values:
 ```
-BOT_TOKEN=    # токен Telegram-бота (обязательно)
-admin=        # ID администратора (целое число)
-admin_name=   # username/имя админа (опционально, для автозаполнения)
+BOT_TOKEN=    # Telegram bot token (required)
+admin=        # Administrator ID (integer)
+admin_name=   # Admin username/name (optional, for auto-fill)
 ```
-> Переменные `admin` и `admin_name` читаются в `data/main.py`. `BOT_TOKEN` — в `config.py`.
+> `admin` and `admin_name` are used in `data/main.py`. `BOT_TOKEN` is used in `config.py`.  
 
-## 🚀 Установка и запуск
+## 🚀 Installation & Run
 ```bash
 git clone https://github.com/<username>/blumebot.git
 cd blumebot
 
-# 1) Создать и активировать виртуальную среду
+# 1) Create and activate virtual environment
 python -m venv .venv
 # Linux/macOS:
 source .venv/bin/activate
 # Windows:
 # .venv\Scripts\activate
 
-# 2) Установить зависимости
+# 2) Install dependencies
 pip install -r BlumeBot/req.txt
 
-# 3) Настроить окружение
+# 3) Configure environment
 cp .env.example .env
-# затем отредактируйте .env и вставьте ваш BOT_TOKEN и admin
+# then edit .env and insert your BOT_TOKEN and admin
 
-# 4) Запуск
+# 4) Run the bot
 python BlumeBot/main.py
 ```
 
-### 🔌 Вебхук (опционально)
-В проекте есть упоминание `webhook` в `main.py`. Если вы используете вебхуки, подготовьте публичный HTTPS URL (ngrok/Reverse proxy) и добавьте логику установки вебхука (если требуется). По умолчанию можно работать в `polling`.
+### 🔌 Webhook (optional)
+The project mentions `webhook` in `main.py`.  
+If you want to use webhooks, prepare a public HTTPS URL (ngrok/Reverse proxy) and implement webhook setup logic.  
+By default, you can work with `polling`.  
 
-## 🧪 Тесты/качество кода (опционально)
-Добавьте по желанию: `pytest`, `ruff/flake8`, `black` и CI.
+## 🧪 Tests / Code Quality (optional)
+You can add: `pytest`, `ruff/flake8`, `black`, and CI.  
 
-## 🛠 Полезные команды для репозитория
+## 🛠 Useful Repo Commands
 ```bash
-# первичная инициализация
+# initial repo setup
 git init
 git add .
 git commit -m "chore: init BlumeBot repo"
 
-# создать репозиторий на GitHub через gh CLI
+# create GitHub repo via gh CLI
 gh repo create <username>/blumebot --public --source=. --remote=origin --push
 ```
 
-## 🧹 .gitignore и секреты
-- Файл `.env` **не коммитим**. В репозитории держим только `.env.example`.
-- Бинарные артефакты, кеши, виртуальные среды — в `.gitignore`.
+## 🧹 .gitignore & Secrets
+- Do **not** commit `.env`. Only keep `.env.example` in the repo.  
+- Binary artifacts, caches, virtual envs should go into `.gitignore`.  
 
-## 📜 Лицензия
-MIT. См. `LICENSE`.
+## 📜 License
+MIT — see `LICENSE`.  
 
 ---
 
-**Автор:** Роберт • **Контакты:** [Telegram](https://t.me/che1zi)
+**Author:** Robert • **Contact:** [Telegram](https://t.me/che1zi)
